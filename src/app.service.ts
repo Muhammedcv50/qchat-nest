@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { platform } from 'node:process';
 
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World!';
+    return `${platform}`;
   }
 }
