@@ -9,6 +9,7 @@ import { MessageModule } from './message/message.module';
 import { GroupModule } from './group/group.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeormConfigFactory } from './shared/typeorm';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { typeormConfigFactory } from './shared/typeorm';
     }),
     TypeOrmModule.forRootAsync({ imports: [ConfigModule], inject: [ConfigService], useFactory: typeormConfigFactory }),
     UserModule,
+    AuthModule,
     AdminModule,
     MessageModule,
     GroupModule,

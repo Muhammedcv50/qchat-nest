@@ -9,7 +9,7 @@ export class FriendshipStatus extends BaseEntity {
   @Column( )
   addresseeId: Date;
 
-  @Column()
+  @Column({default:false})
   isAccepted: boolean;
 
   @Column()
